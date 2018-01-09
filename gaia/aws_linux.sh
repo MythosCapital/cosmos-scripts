@@ -61,3 +61,6 @@ ExecStart=/bin/sh -c '/opt/gopath/bin/gaia node start --home=/opt/testnets/gaia-
 WantedBy=multi-user.target
 " > /etc/systemd/system/gaia.service
 systemctl enable gaia.service
+
+# Finally reboot
+reboot
