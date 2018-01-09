@@ -1,5 +1,8 @@
 #!/bin/bash -ex
-cd /tmp
+
+# Debug logging
+# exec > /var/log/gaia-setup.log
+# exec 2>&1
 
 # Update packages - we'll reboot later on in case a this includes a kernel update
 yum update -y
@@ -23,6 +26,7 @@ log_group_name = /var/log/gaia.log" > /etc/awslogs/config/gaia.conf
 systemctl enable awslogsd.service
 
 # Install Go 1.9.2
+cd /tmp
 wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz
 export GOPATH=/opt/gopath

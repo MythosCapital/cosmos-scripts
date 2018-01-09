@@ -1,6 +1,10 @@
 #!/bin/sh
 set -e -x
 
+# Debug logging
+# exec > /var/log/gaia-setup.log
+# exec 2>&1
+
 # Bootstrap pkg
 env ASSUME_ALWAYS_YES=YES pkg bootstrap || true
 
