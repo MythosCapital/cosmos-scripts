@@ -2,7 +2,7 @@
 set -e -x
 
 # Debug logging
-# exec > /var/log/gaia-setup.log
+# exec >> /var/log/gaia-setup.log
 # exec 2>&1
 
 # Bootstrap pkg
@@ -14,7 +14,7 @@ pkg upgrade -y
 # Install dependencies
 pkg install -y git-lite go
 export GOPATH="/opt/gopath"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$GOPATH/bin:/usr/local/bin:$PATH"
 
 # Install Gaia 0.5.0
 go get github.com/cosmos/gaia || true
