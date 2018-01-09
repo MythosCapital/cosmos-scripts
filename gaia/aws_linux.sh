@@ -14,6 +14,7 @@ cwlogs = cwlogs
 region = eu-central-1" > /etc/awslogs/awscli.conf
 
 # Log Gaia output separately as it is in a custom date/time format
+touch /var/log/gaia.log
 echo "[/var/log/gaia.log]
 datetime_format = I[%m-%d|%H:%M:%S.%f]
 file = /var/log/gaia.log
@@ -27,7 +28,7 @@ tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz
 export GOPATH=/opt/gopath
 export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
 
-# Install Gaia
+# Install Gaia 0.5.0
 go get github.com/cosmos/gaia || true
 cd "$GOPATH/src/github.com/cosmos/gaia"
 git checkout -qf v0.5.0
@@ -39,7 +40,7 @@ git clone https://github.com/tendermint/testnets /opt/testnets
 
 # Create gaia-daemon user and set permissions
 useradd --system --shell /usr/sbin/nologin gaia-daemon
-chown gaia-daemon:gaia-daemon -R /opt/testnets
+chown gaia-daemon:gaia-daemon -R /opt/testnets /var/log/gaia.log
 
 # Create gaia.service
 echo "[Unit]
