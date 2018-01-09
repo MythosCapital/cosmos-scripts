@@ -1,7 +1,7 @@
 # About
 
-This repository contains shell scripts for running a full node on [Cosmos](http://cosmos.network).
-Most should be suitable for cloud automation can be passed as [user-data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) on AWS.
+This repository contains shell scripts for running a full node on the [Cosmos network](http://cosmos.network).
+Most should be suitable for cloud automation and can be passed as [user-data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) on AWS (and possibly Digital Ocean - untested).
 
 Feel free to use them if you intend to run a validator, but keep in mind that additional steps are required to secure your server.
 
