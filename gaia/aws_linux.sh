@@ -44,7 +44,7 @@ chown gaia-daemon:gaia-daemon -R /opt/testnets /var/log/gaia.log
 
 # Create gaia.service
 echo "[Unit]
-Description=gaia-daemon
+Description=Cosmos Gaia Node
 After=network-online.target
 
 [Service]
