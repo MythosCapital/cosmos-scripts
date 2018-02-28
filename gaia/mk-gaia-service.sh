@@ -26,3 +26,6 @@ WantedBy=multi-user.target
 " > /etc/systemd/system/gaia.service
 systemctl enable gaia.service
 systemctl start gaia.service
+
+cp monitor-gaia.sh /usr/bin
+echo "* * * * * root /usr/bin/monitor-gaia.sh" > /etc/cron.d/monitor-gaia
